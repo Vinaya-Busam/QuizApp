@@ -1,0 +1,21 @@
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: quiz-mysql
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: quiz_app
+      MYSQL_USER: quiz_user
+      MYSQL_PASSWORD: quiz_password
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
