@@ -2,6 +2,7 @@ package com.quizapp.quizapp.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.quizapp.quizapp.entity.Role;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class User {
 
     @Id
