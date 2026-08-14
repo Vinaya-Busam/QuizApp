@@ -48,5 +48,4 @@ public class User {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
     }
-
 }
