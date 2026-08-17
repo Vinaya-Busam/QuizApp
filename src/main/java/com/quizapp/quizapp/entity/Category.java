@@ -6,9 +6,12 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
-@Data
+
 @Entity 
 @Table(name = "categories")
+@Data 
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder 
 public class Category {
 
