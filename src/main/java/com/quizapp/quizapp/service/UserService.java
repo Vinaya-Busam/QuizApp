@@ -26,7 +26,7 @@ public class UserService {
 
     // Get all users
     public List<UserResponse> getAllUsers() {
-        List<User> users = userRepo.findAll();
+        List<User> users = userRepo.findByRole(Role.USER);
         List<UserResponse> userResponses = new ArrayList<>();
         for(User user : users) {
             UserResponse response = UserResponse.builder()
