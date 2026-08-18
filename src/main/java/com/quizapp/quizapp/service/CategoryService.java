@@ -3,6 +3,8 @@ package com.quizapp.quizapp.service;
 import com.quizapp.quizapp.dto.request.CategoryRequest;
 import com.quizapp.quizapp.dto.response.CategoryResponse;
 import com.quizapp.quizapp.entity.Category;
+import com.quizapp.quizapp.exception.DuplicateResourceException;
+import com.quizapp.quizapp.exception.ResourceNotFoundException;
 import com.quizapp.quizapp.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,7 +22,7 @@ public class CategoryService {
     // Create Category
     public CategoryResponse createCategory(CategoryRequest request) {
         if(categoryRepo.existsByName(request.getName())) {
-            throw new RuntimeException("Category already exists");
+            throw new DuplicateResourceException("Category already exists");
         }
 
         Category category = Category.builder()
@@ -45,7 +47,7 @@ public class CategoryService {
     public CategoryResponse getCategoryById(Integer id) {
         Category category = categoryRepo.findById(id)
                                         .orElseThrow(() -> 
-                                                    new RuntimeException("Category not found with id: " + id));
+                                                    new ResourceNotFoundException("Category not found with id: " + id));
         
         return mapToResponse(category);
     }
@@ -53,7 +55,7 @@ public class CategoryService {
     // Update Category
     public CategoryResponse updateCategory(Integer id, CategoryRequest request) {
         Category category = categoryRepo.findById(id)
-                                        .orElseThrow(() -> new RuntimeException("Category not found with id: " + id));
+                                        .orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + id));
         
         if (!category.getName().equals(request.getName()) && 
                 categoryRepo.existsByName(request.getName())) {
@@ -71,7 +73,7 @@ public class CategoryService {
     // Delete Category
     public void deleteCategory(Integer id) {
         Category category = categoryRepo.findById(id)
-                                        .orElseThrow(() -> new RuntimeException("Category not found with id: " + id));
+                                        .orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + id));
         categoryRepo.delete(category);
     }
 
