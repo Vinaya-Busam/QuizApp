@@ -35,6 +35,11 @@ public class QuestionService {
 
         Question question = Question.builder()
                                     .questionText(request.getQuestionText())
+                                    .optionA(request.getOptionA())
+                                    .optionB(request.getOptionB())
+                                    .optionC(request.getOptionC())
+                                    .optionD(request.getOptionD())
+                                    .correctOption(request.getCorrectOption())
                                     .questionOrder(request.getQuestionOrder())
                                     .quiz(quiz)
                                     .build();
@@ -87,6 +92,11 @@ public class QuestionService {
         }
 
         question.setQuestionText(request.getQuestionText());
+        question.setOptionA(request.getOptionA());
+        question.setOptionB(request.getOptionB());
+        question.setOptionC(request.getOptionC());
+        question.setOptionD(request.getOptionD());
+        question.setCorrectOption(request.getCorrectOption());
         question.setQuestionOrder(request.getQuestionOrder());
         question.setQuiz(quiz);
 
@@ -107,6 +117,11 @@ public class QuestionService {
         return QuestionResponse.builder()
                     .id(question.getId())
                     .questionText(question.getQuestionText())
+                    .optionA(question.getOptionA())
+                    .optionB(question.getOptionB())
+                    .optionC(question.getOptionC())
+                    .optionD(question.getOptionD())
+                    .correctOption(question.getCorrectOption())
                     .questionOrder(question.getQuestionOrder())
                     .quizId(question.getQuiz().getId())
                     .quizTitle(question.getQuiz().getTitle())

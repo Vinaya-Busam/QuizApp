@@ -21,6 +21,21 @@ public class Question {
     @Column(nullable = false, length = 1000)
     private String questionText;
 
+    @Column(nullable = false, length = 500)
+    private String optionA;
+
+    @Column(nullable = false, length = 500)
+    private String optionB;
+
+    @Column(nullable = false, length = 500)
+    private String optionC;
+
+    @Column(nullable = false, length = 500)
+    private String optionD;
+
+    @Column(nullable = false)
+    private String correctOption;
+
     @Column(nullable = false)
     private Integer questionOrder;
 
