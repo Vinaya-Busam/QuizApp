@@ -2,6 +2,7 @@ package com.quizapp.quizapp.service;
 
 import com.quizapp.quizapp.dto.request.QuestionRequest;
 import com.quizapp.quizapp.dto.response.QuestionResponse;
+import com.quizapp.quizapp.dto.response.QuizQuestionResponse;
 import com.quizapp.quizapp.entity.Question;
 import com.quizapp.quizapp.entity.Quiz;
 import com.quizapp.quizapp.exception.DuplicateResourceException;
@@ -63,7 +64,7 @@ public class QuestionService {
         return mapToResponse(question);
     }
 
-    // Get Questions By Quiz Id
+    // Get Questions By Quiz Id For Admin
     public List<QuestionResponse> getQuestionsByQuiz(Integer quizId) {
         if(!quizRepo.existsById(quizId)) {
             throw new ResourceNotFoundException("Quiz not found with id: " + quizId);
@@ -71,6 +72,27 @@ public class QuestionService {
 
         return questionRepo.findByQuizIdOrderByQuestionOrderAsc(quizId)
                             .stream().map(this::mapToResponse).toList();
+    }
+
+    // Get Questions by Quiz Id for user
+    public List<QuizQuestionResponse> getQuestionsForQuiz(Integer quizId) {
+        if(!quizRepo.existsById(quizId)) {
+            throw new ResourceNotFoundException("Quiz not found with id: " + quizId);
+        }
+
+        return questionRepo.findByQuizIdOrderByQuestionOrderAsc(quizId)
+                .stream()
+                .map(question -> QuizQuestionResponse.builder()
+                        .id(question.getId())
+                        .questionText(question.getQuestionText())
+                        .optionA(question.getOptionA())
+                        .optionB(question.getOptionB())
+                        .optionC(question.getOptionC())
+                        .optionD(question.getOptionD())
+                        .quizTitle(question.getQuiz().getTitle())
+                        .questionOrder(question.getQuestionOrder())
+                        .build())
+                .toList();
     }
 
     // Update Question

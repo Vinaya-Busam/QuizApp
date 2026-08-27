@@ -2,6 +2,7 @@ package com.quizapp.quizapp.controller;
 
 import com.quizapp.quizapp.dto.request.QuestionRequest;
 import com.quizapp.quizapp.dto.response.QuestionResponse;
+import com.quizapp.quizapp.dto.response.QuizQuestionResponse;
 import com.quizapp.quizapp.service.QuestionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,10 +41,16 @@ public class QuestionController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @GetMapping("/quizzes/{quizId}/questions")
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/admin/quizzes/{quizId}/questions")
     public ResponseEntity<List<QuestionResponse>> getQuestionsByQuiz(@PathVariable Integer quizId) {
         List<QuestionResponse> responses = questionService.getQuestionsByQuiz(quizId);
         return ResponseEntity.status(HttpStatus.OK).body(responses);
+    }
+
+    @GetMapping("/quiz/{quizId}/questions")
+    public ResponseEntity<List<QuizQuestionResponse>> getQuestionsForQuiz(@PathVariable Integer quizId) {
+        return ResponseEntity.ok(questionService.getQuestionsForQuiz(quizId));
     }
 
     @PreAuthorize("hasRole('ADMIN')")
