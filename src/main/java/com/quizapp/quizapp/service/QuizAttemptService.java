@@ -6,7 +6,6 @@ import com.quizapp.quizapp.entity.User;
 import com.quizapp.quizapp.exception.ResourceNotFoundException;
 import com.quizapp.quizapp.repository.QuizAttemptRepository;
 import com.quizapp.quizapp.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,6 +37,7 @@ public class QuizAttemptService {
                                 .quizId(attempt.getQuiz().getId())
                                 .quizTitle(attempt.getQuiz().getTitle())
                                 .totalQuestions(attempt.getTotalQuestions())
+                                .correctAnswers(attempt.getCorrectAnswers())
                                 .wrongAnswers(attempt.getWrongAnswers())
                                 .score(attempt.getScore())
                                 .percentage(attempt.getPercentage())

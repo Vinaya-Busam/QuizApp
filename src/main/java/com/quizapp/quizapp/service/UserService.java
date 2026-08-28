@@ -13,6 +13,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 @Service
 public class UserService {
     private UserRepository userRepo;
@@ -25,19 +28,16 @@ public class UserService {
     }
 
     // Get all users
-    public List<UserResponse> getAllUsers() {
-        List<User> users = userRepo.findByRole(Role.USER);
-        List<UserResponse> userResponses = new ArrayList<>();
-        for(User user : users) {
-            UserResponse response = UserResponse.builder()
+    public Page<UserResponse> getAllUsers(Pageable pageable) {
+        Page<User> users = userRepo.findByRole(Role.USER, pageable);
+        
+        return users.map(user -> UserResponse.builder()
                                     .id(user.getId())
                                     .name(user.getName())
                                     .email(user.getEmail())
                                     .role(user.getRole())
-                                    .build();
-            userResponses.add(response);
-        }
-        return userResponses;
+                                    .build()
+                                );
     }
 
 

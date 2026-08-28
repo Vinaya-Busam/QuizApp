@@ -29,6 +29,9 @@ public class QuizAttempt {
     private Integer totalQuestions;
 
     @Column(nullable = false)
+    private Integer correctAnswers;
+
+    @Column(nullable = false)
     private Integer wrongAnswers;
 
     @Column(nullable = false)

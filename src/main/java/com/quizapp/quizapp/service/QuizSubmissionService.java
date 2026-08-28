@@ -95,14 +95,15 @@ public class QuizSubmissionService {
         int totalQs = questions.size();
         int wrongAnswers = totalQs - correctAnswers;
         double percentage = ((double) correctAnswers / totalQs) * 100;
-
+        int score = correctAnswers;
         // Save attempt
         QuizAttempt attempt = QuizAttempt.builder()
                                 .quiz(quiz)
                                 .user(user)
                                 .totalQuestions(totalQs)
+                                .correctAnswers(correctAnswers)
                                 .wrongAnswers(wrongAnswers)
-                                .score(correctAnswers)
+                                .score(score)
                                 .percentage(percentage)
                                 .build();
         quizAttemptRepo.save(attempt);

@@ -13,6 +13,7 @@ public class QuizAttemptResponse {
     private Integer quizId;
     private String quizTitle;
     private Integer totalQuestions;
+    private Integer correctAnswers;
     private Integer wrongAnswers;
     private Integer score;
     private Double percentage;

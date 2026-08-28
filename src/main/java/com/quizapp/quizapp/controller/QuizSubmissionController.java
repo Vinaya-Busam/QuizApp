@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
@@ -19,7 +20,7 @@ public class QuizSubmissionController {
     }
 
     @PostMapping("/quiz/submit")
-    public ResponseEntity<QuizResultResponse> submitQuiz(@RequestBody QuizSubmissionRequest request) {
+    public ResponseEntity<QuizResultResponse> submitQuiz(@Valid @RequestBody QuizSubmissionRequest request) {
         QuizResultResponse response = quizSubmissionService.submitQuiz(request);
         return ResponseEntity.ok(response);
     }

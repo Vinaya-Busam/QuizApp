@@ -11,6 +11,10 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.security.access.prepost.PreAuthorize;
 import java.util.*;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springdoc.core.annotations.ParameterObject;
+
 @RestController
 @RequestMapping("/api/users")
 @SecurityRequirement(name = "bearerAuth")
@@ -23,12 +27,10 @@ public class UserController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/getAllUsers")
-    public ResponseEntity<List<UserResponse>> getAllUsers() {
-        List<UserResponse> users = userService.getAllUsers();
+    public ResponseEntity<Page<UserResponse>> getAllUsers(@ParameterObject Pageable pageable) {
+        Page<UserResponse> users = userService.getAllUsers(pageable);
 
-        return ResponseEntity       
-                .status(HttpStatus.OK)
-                .body(users);
+        return ResponseEntity.ok(users);
     }
 
     @PostMapping("/register")

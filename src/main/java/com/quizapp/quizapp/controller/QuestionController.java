@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class QuestionController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/question/create")
-    public ResponseEntity<QuestionResponse> createQuestion(@RequestBody QuestionRequest request) {
+    public ResponseEntity<QuestionResponse> createQuestion(@Valid @RequestBody QuestionRequest request) {
         QuestionResponse response = questionService.createQuestion(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -55,7 +56,7 @@ public class QuestionController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/updateQuestion/{id}")
-    public ResponseEntity<QuestionResponse> updatedQuestion(@PathVariable Integer id, @RequestBody QuestionRequest request) {
+    public ResponseEntity<QuestionResponse> updatedQuestion(@PathVariable Integer id, @Valid @RequestBody QuestionRequest request) {
         QuestionResponse updatedQuestion = questionService.updateQuestion(id, request);
         return ResponseEntity.ok(updatedQuestion);
     }

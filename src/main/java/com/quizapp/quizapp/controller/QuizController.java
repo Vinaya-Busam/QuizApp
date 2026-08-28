@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class QuizController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/quiz/create")
-    public ResponseEntity<QuizResponse> createQuiz(@RequestBody QuizRequest request) {
+    public ResponseEntity<QuizResponse> createQuiz(@Valid @RequestBody QuizRequest request) {
         QuizResponse response = quizService.createQuiz(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -47,7 +48,7 @@ public class QuizController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/updateQuiz/{id}")
-    public ResponseEntity<QuizResponse> updatedQuiz(@PathVariable Integer id, @RequestBody QuizRequest request) {
+    public ResponseEntity<QuizResponse> updatedQuiz(@PathVariable Integer id, @Valid @RequestBody QuizRequest request) {
         QuizResponse updatedQuiz = quizService.updateQuiz(id, request);
         return ResponseEntity.status(HttpStatus.OK).body(updatedQuiz);
     }
