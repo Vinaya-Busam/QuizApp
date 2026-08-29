@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/authContext";
 import { getUserDashboard } from "../services/dashboardService";
+import Navbar from "../components/Navbar";
 
 function UserDashboard() {
 
@@ -55,27 +56,8 @@ function UserDashboard() {
     return (
         <div className="dashboard-page">
 
-            <header className="dashboard-header">
-
-                <div>
-                    <h1>Quiz App</h1>
-                </div>
-
-                <div className="user-section">
-
-                    <span>
-                        {user?.name}
-                    </span>
-
-                    <button onClick={logout}>
-                        Logout
-                    </button>
-
-                </div>
-
-            </header>
-
-
+            <Navbar/>
+            
             <main className="dashboard-content">
 
                 <div className="welcome-section">
