@@ -8,6 +8,7 @@ import {
     updateQuiz,
     deleteQuiz
 } from "../services/quizService";
+import { getAllCategories } from "../services/categoryService";
 
 function AdminQuizzes() {
 
@@ -19,7 +20,8 @@ function AdminQuizzes() {
     const [error, setError] = useState("");
 
     const [showForm, setShowForm] = useState(false);
-
+    const [categories, setCategories] = useState([]);
+    
     const [editingQuiz, setEditingQuiz] = useState(null);
 
     const [formData, setFormData] = useState({
@@ -30,20 +32,25 @@ function AdminQuizzes() {
     });
 
 
-    const fetchQuizzes = async () => {
+    const fetchData = async () => {
 
         try {
 
             setLoading(true);
             setError("");
 
-            const data = await getAllQuizzes();
+            const [quizzesData, categoriesData] =
+                await Promise.all([
+                    getAllQuizzes(),
+                    getAllCategories()
+                ]);
 
-            setQuizzes(data);
+            setQuizzes(quizzesData);
+            setCategories(categoriesData);
 
         } catch (error) {
 
-            console.error("Quiz API Error:", error);
+            console.error("Admin Quiz Error:", error);
 
             setError(
                 error.response?.data?.message ||
@@ -58,7 +65,7 @@ function AdminQuizzes() {
 
 
     useEffect(() => {
-        fetchQuizzes();
+        fetchData();
     }, []);
 
 
@@ -149,7 +156,7 @@ function AdminQuizzes() {
 
             closeForm();
 
-            await fetchQuizzes();
+            await fetchData();
 
         } catch (error) {
 
@@ -301,17 +308,32 @@ function AdminQuizzes() {
                                 <div className="form-group">
 
                                     <label>
-                                        Category ID
+                                        Category
                                     </label>
 
-                                    <input
-                                        type="number"
+                                    <select
                                         name="categoryId"
                                         value={formData.categoryId}
                                         onChange={handleChange}
-                                        min="1"
                                         required
-                                    />
+                                    >
+
+                                        <option value="">
+                                            Select Category
+                                        </option>
+
+                                        {categories.map((category) => (
+
+                                            <option
+                                                key={category.id}
+                                                value={category.id}
+                                            >
+                                                {category.name}
+                                            </option>
+
+                                        ))}
+
+                                    </select>
 
                                 </div>
 

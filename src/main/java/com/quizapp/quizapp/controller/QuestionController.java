@@ -30,6 +30,7 @@ public class QuestionController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/getAllQuestions")
     public ResponseEntity<List<QuestionResponse>> getAllQuestions() {
         List<QuestionResponse> responses = questionService.getAllQuestions();

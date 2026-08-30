@@ -10,6 +10,9 @@ import QuizResult from "../pages/QuizResult";
 import MyAttempts from "../pages/MyAttempts";
 import AdminUsers from "../pages/AdminUser";
 import AdminQuizzes from "../pages/AdminQuizzes";
+import AdminQuestions from "../pages/AdminQuestions";
+import AdminRoute from "./AdminRoute";
+import AdminCategories from "../pages/AdminCategories";
 
 function AppRoutes() {
 
@@ -35,21 +38,6 @@ function AppRoutes() {
                     />
 
                     <Route
-                        path="/admin/dashboard"
-                        element={<AdminDashboard />}
-                    />
-
-                    <Route
-                        path="/admin/users"
-                        element={<AdminUsers />}
-                    />
-
-                    <Route
-                        path="/admin/quizzes"
-                        element={<AdminQuizzes />}
-                    />
-
-                    <Route
                         path="/quizzes"
                         element={<QuizList />}
                     />
@@ -67,6 +55,35 @@ function AppRoutes() {
                     <Route
                         path="/attempts"
                         element={<MyAttempts />}
+                    />
+
+                </Route>
+
+                <Route element={<AdminRoute />}>
+
+                    <Route
+                        path="/admin/dashboard"
+                        element={<AdminDashboard />}
+                    />
+
+                    <Route
+                        path="/admin/users"
+                        element={<AdminUsers />}
+                    />
+
+                    <Route
+                        path="/admin/quizzes"
+                        element={<AdminQuizzes />}
+                    />
+
+                    <Route
+                        path="/admin/questions"
+                        element={<AdminQuestions />}
+                    />
+
+                    <Route
+                        path="/admin/categories"
+                        element={<AdminCategories />}
                     />
 
                 </Route>

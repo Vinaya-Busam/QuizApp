@@ -63,7 +63,7 @@ function UserDashboard() {
                 <div className="welcome-section">
 
                     <h2>
-                        Welcome back, {user?.name} 👋
+                        Welcome back, {user?.name}
                     </h2>
 
                     <p>

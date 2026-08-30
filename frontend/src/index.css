@@ -1,3 +1,7 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,20 +13,31 @@ body {
     background: #f4f6f8;
 }
 
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
 .login-page {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
 }
 
 .login-card {
     width: 100%;
     max-width: 420px;
+
     background: white;
+
     padding: 40px;
+
     border-radius: 16px;
+
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -43,15 +58,21 @@ body {
 
 .form-group label {
     display: block;
+
     margin-bottom: 8px;
+
     font-weight: 600;
 }
 
 .form-group input {
     width: 100%;
+
     padding: 12px;
+
     border: 1px solid #ccc;
+
     border-radius: 8px;
+
     font-size: 15px;
 }
 
@@ -62,12 +83,19 @@ body {
 
 .login-card button {
     width: 100%;
+
     padding: 13px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #222;
+
     color: white;
+
     font-size: 16px;
+
     cursor: pointer;
 }
 
@@ -78,9 +106,16 @@ body {
 
 .error-message {
     color: #d32f2f;
+
     margin-bottom: 15px;
+
     font-size: 14px;
 }
+
+
+/* =========================================================
+   USER DASHBOARD
+========================================================= */
 
 .dashboard-page {
     min-height: 100vh;
@@ -89,11 +124,15 @@ body {
 
 .dashboard-header {
     height: 70px;
+
     padding: 0 40px;
+
     background: white;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
@@ -104,6 +143,7 @@ body {
 .user-section {
     display: flex;
     align-items: center;
+
     gap: 20px;
 }
 
@@ -113,16 +153,23 @@ body {
 
 .user-section button {
     border: none;
+
     padding: 9px 16px;
+
     border-radius: 7px;
+
     background: #222;
+
     color: white;
+
     cursor: pointer;
 }
 
 .dashboard-content {
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 40px 25px;
 }
 
@@ -132,6 +179,7 @@ body {
 
 .welcome-section h2 {
     font-size: 30px;
+
     margin-bottom: 8px;
 }
 
@@ -141,82 +189,78 @@ body {
 
 .stats-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 20px;
 }
 
 .stat-card {
     background: white;
+
     padding: 25px;
+
     border-radius: 14px;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
 .stat-card h3 {
     font-size: 15px;
+
     color: #666;
+
     margin-bottom: 15px;
 }
 
 .stat-card p {
     font-size: 30px;
+
     font-weight: bold;
 }
 
 .dashboard-message {
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 18px;
 }
 
-@media (max-width: 800px) {
 
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .dashboard-header {
-        padding: 0 20px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .welcome-section h2 {
-        font-size: 24px;
-    }
-
-    .user-section span {
-        display: none;
-    }
-}
+/* =========================================================
+   QUIZ LIST - USER
+========================================================= */
 
 .quiz-list-page {
     min-height: 100vh;
+
     background: #f4f6f8;
 }
 
 .quiz-list-content {
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 40px 25px;
 }
 
 .quiz-list-heading {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     margin-bottom: 30px;
 }
 
 .quiz-list-heading h2 {
     font-size: 30px;
+
     margin-bottom: 8px;
 }
 
@@ -226,68 +270,101 @@ body {
 
 .back-button {
     padding: 10px 16px;
+
     border: none;
+
     border-radius: 8px;
+
     background: white;
+
     cursor: pointer;
+
     font-size: 14px;
 }
 
 .quiz-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 22px;
 }
 
 .quiz-card {
     background: white;
+
     border-radius: 16px;
+
     padding: 25px;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .quiz-card:hover {
     transform: translateY(-4px);
+
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
 }
 
 .quiz-category {
     display: inline-block;
+
     padding: 5px 10px;
+
     border-radius: 20px;
+
     background: #f0f0f0;
+
     font-size: 12px;
+
     font-weight: 600;
+
     margin-bottom: 15px;
 }
 
 .quiz-card h3 {
     font-size: 21px;
+
     margin-bottom: 10px;
 }
 
 .quiz-description {
     color: #666;
+
     line-height: 1.5;
+
     min-height: 48px;
+
     margin-bottom: 20px;
 }
 
 .quiz-info {
     color: #555;
+
     font-size: 14px;
+
     margin-bottom: 20px;
 }
 
 .start-quiz-button {
     width: 100%;
+
     padding: 12px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #222;
+
     color: white;
+
     cursor: pointer;
+
     font-size: 15px;
 }
 
@@ -297,44 +374,36 @@ body {
 
 .empty-state {
     background: white;
+
     padding: 50px;
+
     border-radius: 15px;
+
     text-align: center;
 }
 
 .empty-state p {
     color: #666;
+
     margin-top: 8px;
 }
 
-@media (max-width: 900px) {
 
-    .quiz-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-
-    .quiz-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quiz-list-heading {
-        align-items: flex-start;
-        gap: 15px;
-        flex-direction: column;
-    }
-}
+/* =========================================================
+   TAKE QUIZ
+========================================================= */
 
 .take-quiz-page {
     min-height: 100vh;
+
     background: #f4f6f8;
 }
 
 .take-quiz-content {
     max-width: 850px;
+
     margin: 0 auto;
+
     padding: 40px 25px;
 }
 
@@ -344,6 +413,7 @@ body {
 
 .quiz-top h2 {
     font-size: 28px;
+
     margin-bottom: 8px;
 }
 
@@ -353,38 +423,63 @@ body {
 
 .question-card {
     background: white;
+
     padding: 35px;
+
     border-radius: 16px;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.question-dates {
+    display: flex;
+    gap: 20px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #888;
 }
 
 .question-number {
     font-size: 14px;
+
     font-weight: 600;
+
     color: #666;
+
     margin-bottom: 15px;
 }
 
 .question-text {
     font-size: 24px;
+
     line-height: 1.4;
+
     margin-bottom: 30px;
 }
 
 .options-container {
     display: flex;
+
     flex-direction: column;
+
     gap: 14px;
 }
 
 .option {
     display: flex;
+
     align-items: center;
+
     gap: 14px;
+
     padding: 16px;
+
     border: 1px solid #ddd;
+
     border-radius: 10px;
+
     cursor: pointer;
+
     transition: 0.2s;
 }
 
@@ -394,11 +489,13 @@ body {
 
 .option.selected {
     border-color: #222;
+
     background: #f1f1f1;
 }
 
 .option input {
     width: 18px;
+
     height: 18px;
 }
 
@@ -408,21 +505,29 @@ body {
 
 .quiz-navigation {
     display: flex;
+
     justify-content: space-between;
+
     margin-top: 25px;
 }
 
 .quiz-navigation button {
     padding: 11px 20px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #222;
+
     color: white;
+
     cursor: pointer;
 }
 
 .quiz-navigation button:disabled {
     opacity: 0.4;
+
     cursor: not-allowed;
 }
 
@@ -430,84 +535,98 @@ body {
     background: #222 !important;
 }
 
-@media (max-width: 600px) {
 
-    .take-quiz-content {
-        padding: 25px 15px;
-    }
-
-    .question-card {
-        padding: 25px 20px;
-    }
-
-    .question-text {
-        font-size: 20px;
-    }
-}
+/* =========================================================
+   RESULT PAGE
+========================================================= */
 
 .result-page {
     min-height: 100vh;
+
     background: #f4f6f8;
 }
 
 .result-content {
     max-width: 700px;
+
     margin: 0 auto;
+
     padding: 50px 25px;
 }
 
 .result-card {
     background: white;
+
     padding: 40px;
+
     border-radius: 18px;
+
     text-align: center;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
 .result-card h2 {
     font-size: 30px;
+
     margin-bottom: 10px;
 }
 
 .result-card h3 {
     color: #666;
+
     margin-bottom: 30px;
 }
 
 .score-circle {
     width: 140px;
+
     height: 140px;
+
     border-radius: 50%;
+
     border: 8px solid #222;
+
     margin: 0 auto 35px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .score-circle span {
     font-size: 30px;
+
     font-weight: bold;
 }
 
 .result-stats {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 15px;
+
     margin-bottom: 30px;
 }
 
 .result-stats div {
     background: #f5f5f5;
+
     padding: 18px;
+
     border-radius: 10px;
 }
 
 .result-stats span {
     display: block;
+
     color: #666;
+
     font-size: 14px;
+
     margin-bottom: 8px;
 }
 
@@ -517,54 +636,58 @@ body {
 
 .result-actions {
     display: flex;
+
     gap: 15px;
+
     justify-content: center;
 }
 
 .result-actions button {
     padding: 12px 20px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #222;
+
     color: white;
+
     cursor: pointer;
 }
 
-@media (max-width: 500px) {
 
-    .result-card {
-        padding: 25px 18px;
-    }
-
-    .result-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .result-actions {
-        flex-direction: column;
-    }
-}
+/* =========================================================
+   ATTEMPTS PAGE
+========================================================= */
 
 .attempts-page {
     min-height: 100vh;
+
     background: #f4f6f8;
 }
 
 .attempts-content {
     max-width: 1100px;
+
     margin: 0 auto;
+
     padding: 40px 25px;
 }
 
 .attempts-heading {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     margin-bottom: 30px;
 }
 
 .attempts-heading h2 {
     font-size: 30px;
+
     margin-bottom: 8px;
 }
 
@@ -574,18 +697,25 @@ body {
 
 .attempts-list {
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
 }
 
 .attempt-card {
     background: white;
+
     padding: 22px;
+
     border-radius: 14px;
 
     display: grid;
+
     grid-template-columns: 2fr repeat(4, 1fr);
+
     align-items: center;
+
     gap: 20px;
 
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -597,6 +727,7 @@ body {
 
 .attempt-main p {
     color: #777;
+
     font-size: 13px;
 }
 
@@ -606,8 +737,11 @@ body {
 
 .attempt-stat span {
     display: block;
+
     color: #777;
+
     font-size: 13px;
+
     margin-bottom: 5px;
 }
 
@@ -625,67 +759,66 @@ body {
 
 .empty-state button {
     margin-top: 20px;
+
     padding: 11px 18px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #222;
+
     color: white;
+
     cursor: pointer;
 }
 
-@media (max-width: 800px) {
 
-    .attempt-card {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .attempt-main {
-        grid-column: 1 / -1;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .attempts-heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .attempt-card {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar {
     height: 70px;
+
     padding: 0 35px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     background: white;
+
     border-bottom: 1px solid #eee;
 }
 
 .navbar-logo {
     font-size: 21px;
+
     font-weight: 700;
+
     cursor: pointer;
 }
 
 .navbar-links {
     display: flex;
+
     gap: 8px;
 }
 
 .navbar-links button {
     padding: 9px 14px;
+
     border: none;
+
     background: transparent;
+
     cursor: pointer;
+
     border-radius: 7px;
+
     font-size: 14px;
 }
 
@@ -695,52 +828,48 @@ body {
 
 .navbar-user {
     display: flex;
+
     align-items: center;
+
     gap: 15px;
 }
 
 .navbar-user span {
     font-size: 14px;
+
     font-weight: 500;
 }
 
 .logout-button {
     padding: 8px 14px;
+
     border: none;
+
     border-radius: 7px;
+
     background: #222;
+
     color: white;
+
     cursor: pointer;
 }
 
-@media (max-width: 700px) {
 
-    .navbar {
-        height: auto;
-        padding: 15px;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .navbar-links {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .navbar-user {
-        margin-left: auto;
-    }
-}
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
 
 .admin-dashboard-page {
     min-height: 100vh;
+
     background: #f4f6f8;
 }
 
 .admin-dashboard-content {
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 40px 25px;
 }
 
@@ -750,6 +879,7 @@ body {
 
 .admin-heading h1 {
     font-size: 30px;
+
     margin-bottom: 8px;
 }
 
@@ -759,21 +889,29 @@ body {
 
 .admin-stat-grid {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     gap: 20px;
 }
 
 .admin-stat-card {
     background: white;
+
     padding: 25px;
+
     border-radius: 14px;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .admin-stat-card span {
     display: block;
+
     color: #666;
+
     font-size: 14px;
+
     margin-bottom: 12px;
 }
 
@@ -781,38 +919,38 @@ body {
     font-size: 30px;
 }
 
-@media (max-width: 900px) {
-    .admin-stat-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 500px) {
-    .admin-stat-grid {
-        grid-template-columns: 1fr;
-    }
-}
+/* =========================================================
+   ADMIN USERS
+========================================================= */
 
 .admin-users-page {
     min-height: 100vh;
+
     background: #f4f6f8;
 }
 
 .admin-users-content {
     max-width: 1100px;
+
     margin: 0 auto;
+
     padding: 40px 25px;
 }
 
 .admin-users-heading {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     margin-bottom: 30px;
 }
 
 .admin-users-heading h1 {
     font-size: 30px;
+
     margin-bottom: 8px;
 }
 
@@ -822,17 +960,25 @@ body {
 
 .admin-users-heading button {
     padding: 10px 16px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #222;
+
     color: white;
+
     cursor: pointer;
 }
 
 .users-container {
     background: white;
+
     border-radius: 14px;
+
     padding: 20px;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -842,18 +988,22 @@ body {
 
 .users-table {
     width: 100%;
+
     border-collapse: collapse;
 }
 
 .users-table th,
 .users-table td {
     padding: 16px;
+
     text-align: left;
+
     border-bottom: 1px solid #eee;
 }
 
 .users-table th {
     font-size: 14px;
+
     color: #666;
 }
 
@@ -863,84 +1013,96 @@ body {
 
 .role-badge {
     display: inline-block;
+
     padding: 5px 10px;
+
     border-radius: 20px;
+
     background: #eee;
+
     font-size: 12px;
+
     font-weight: 600;
 }
 
 .empty-table {
     text-align: center !important;
+
     padding: 30px !important;
+
     color: #777;
 }
 
 .pagination {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 25px;
+
     margin-top: 25px;
 }
 
 .pagination button {
     padding: 9px 16px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #222;
+
     color: white;
+
     cursor: pointer;
 }
 
 .pagination button:disabled {
     opacity: 0.4;
+
     cursor: not-allowed;
 }
 
 .pagination span {
     font-size: 14px;
+
     color: #555;
 }
 
-@media (max-width: 600px) {
 
-    .admin-users-heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .users-container {
-        padding: 10px;
-    }
-
-    .users-table th,
-    .users-table td {
-        padding: 12px 10px;
-    }
-}
+/* =========================================================
+   ADMIN QUIZZES
+========================================================= */
 
 .admin-quizzes-page {
     min-height: 100vh;
+
     background: #f4f6f8;
 }
 
 .admin-quizzes-content {
     max-width: 1100px;
+
     margin: 0 auto;
+
     padding: 40px 25px;
 }
 
 .admin-quizzes-heading {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     margin-bottom: 30px;
 }
 
 .admin-quizzes-heading h1 {
     font-size: 30px;
+
     margin-bottom: 8px;
 }
 
@@ -950,119 +1112,167 @@ body {
 
 .admin-quiz-actions {
     display: flex;
+
     gap: 10px;
 }
 
 .admin-quiz-actions button {
     padding: 10px 16px;
+
     border: none;
+
     border-radius: 8px;
+
     cursor: pointer;
 }
 
 .back-button {
     background: white;
+
     border: 1px solid #ddd !important;
 }
 
 .create-quiz-button {
     background: #222;
+
     color: white;
 }
 
 .quiz-form-card {
     background: white;
+
     padding: 25px;
+
     border-radius: 14px;
+
     margin-bottom: 25px;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .quiz-form-header {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     margin-bottom: 25px;
 }
 
 .quiz-form-header button {
     border: none;
+
     background: transparent;
+
     font-size: 20px;
+
     cursor: pointer;
 }
 
+
+/* Form */
+
 .form-group {
     display: flex;
+
     flex-direction: column;
+
     gap: 7px;
+
     margin-bottom: 18px;
 }
 
 .form-group label {
     font-size: 14px;
+
     font-weight: 600;
 }
 
 .form-group input,
 .form-group textarea {
     padding: 11px;
+
     border: 1px solid #ddd;
+
     border-radius: 8px;
+
     font-family: inherit;
+
     font-size: 14px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
+
     border-color: #555;
 }
 
 .form-row {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 20px;
 }
 
 .form-actions {
     display: flex;
+
     justify-content: flex-end;
+
     gap: 10px;
 }
 
 .form-actions button {
     padding: 10px 18px;
+
     border: none;
+
     border-radius: 8px;
+
     cursor: pointer;
 }
 
 .form-actions button:last-child {
     background: #222;
+
     color: white;
 }
 
 .admin-error {
     padding: 14px;
+
     background: #f5eeee;
+
     border-radius: 8px;
+
     margin-bottom: 20px;
 }
 
+
+/* Quiz cards */
+
 .admin-quiz-list {
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
 }
 
 .admin-quiz-card {
     background: white;
+
     padding: 22px;
+
     border-radius: 14px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
     gap: 20px;
@@ -1080,44 +1290,503 @@ body {
 
 .admin-quiz-info p {
     color: #666;
+
     margin-bottom: 12px;
 }
 
 .quiz-meta {
     display: flex;
+
     gap: 15px;
+
     font-size: 13px;
+
     color: #777;
 }
 
 .admin-quiz-card-actions {
     display: flex;
+
     gap: 8px;
 }
 
 .admin-quiz-card-actions button {
     padding: 9px 15px;
+
     border: none;
+
     border-radius: 7px;
+
     background: #eee;
+
     cursor: pointer;
 }
 
 .admin-quiz-card-actions .delete-button {
     background: #222;
+
     color: white;
 }
+
+
+/* =========================================================
+   ADMIN QUESTIONS
+   QUIZ → QUESTIONS LAYOUT
+========================================================= */
+
+.admin-questions-page {
+    min-height: 100vh;
+
+    background: #f4f6f8;
+}
+
+.admin-questions-content {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 40px 25px;
+}
+
+
+/* Heading */
+
+.admin-questions-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.admin-questions-heading h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.admin-questions-heading p {
+    color: #666;
+}
+
+.admin-question-actions {
+    display: flex;
+
+    gap: 10px;
+}
+
+.admin-question-actions button {
+    padding: 10px 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.create-question-button {
+    background: #222;
+
+    color: white;
+}
+
+
+/* =========================================================
+   QUESTION FORM
+========================================================= */
+
+.question-form-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.question-form-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.question-form-header button {
+    border: none;
+
+    background: transparent;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* Select */
+
+.form-group select {
+    padding: 11px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+
+/* =========================================================
+   QUIZ LIST / QUIZ GROUP
+========================================================= */
+
+.quiz-question-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.quiz-question-group {
+    background: white;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Quiz header */
+
+.quiz-question-header {
+    width: 100%;
+
+    padding: 20px 22px;
+
+    border: none;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+.quiz-question-header:hover {
+    background: #fafafa;
+}
+
+.quiz-header-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.expand-icon {
+    font-size: 13px;
+
+    width: 20px;
+}
+
+.quiz-question-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+}
+
+.quiz-question-header p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.question-count {
+    font-size: 13px;
+
+    color: #777;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   QUESTIONS INSIDE QUIZ
+========================================================= */
+
+.quiz-questions {
+    border-top: 1px solid #eee;
+
+    padding: 15px;
+
+    background: #fafafa;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.questions-loading {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #777;
+}
+
+
+/* No questions */
+
+.no-questions {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777;
+}
+
+.no-questions button {
+    margin-top: 10px;
+
+    padding: 9px 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #222;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   INDIVIDUAL QUESTION CARD
+========================================================= */
+
+.admin-question-card {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.question-number {
+    width: 36px;
+
+    height: 36px;
+
+    min-width: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eee;
+
+    font-weight: 700;
+}
+
+.admin-question-info {
+    flex: 1;
+}
+
+.admin-question-info h3 {
+    margin: 5px 0 15px;
+
+    font-size: 16px;
+}
+
+
+/* Options */
+
+.question-options {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+}
+
+.question-options span {
+    padding: 9px;
+
+    background: #f7f7f7;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+
+/* Correct answer */
+
+.correct-answer {
+    margin-top: 12px;
+
+    font-size: 13px;
+}
+
+
+/* Edit / Delete */
+
+.admin-question-card-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+.admin-question-card-actions button {
+    padding: 8px 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #eee;
+
+    cursor: pointer;
+}
+
+.admin-question-card-actions .delete-button {
+    background: #222;
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVE - DASHBOARD
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-header {
+        padding: 0 20px;
+    }
+
+    .attempt-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .attempt-main {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - QUIZ LIST
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .quiz-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - ADMIN DASHBOARD
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - NAVBAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 15px;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+    .navbar-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .navbar-user {
+        margin-left: auto;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - ADMIN QUIZZES
+========================================================= */
 
 @media (max-width: 700px) {
 
     .admin-quizzes-heading {
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 15px;
     }
 
     .admin-quiz-card {
         flex-direction: column;
+
         align-items: flex-start;
     }
 
@@ -1131,6 +1800,400 @@ body {
 
     .form-row {
         grid-template-columns: 1fr;
+
         gap: 0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - ADMIN USERS
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-users-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .users-container {
+        padding: 10px;
+    }
+
+    .users-table th,
+    .users-table td {
+        padding: 12px 10px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - USER QUIZ LIST
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .quiz-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-list-heading {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TAKE QUIZ
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .take-quiz-content {
+        padding: 25px 15px;
+    }
+
+    .question-card {
+        padding: 25px 20px;
+    }
+
+    .question-text {
+        font-size: 20px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - RESULT
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .result-card {
+        padding: 25px 18px;
+    }
+
+    .result-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - USER DASHBOARD
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section h2 {
+        font-size: 24px;
+    }
+
+    .user-section span {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - ATTEMPTS
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .attempt-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .attempt-main {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .attempts-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .attempt-card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - ADMIN QUESTIONS
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .admin-questions-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .admin-question-actions {
+        width: 100%;
+    }
+
+    .admin-question-actions button {
+        flex: 1;
+    }
+
+    .quiz-question-header {
+        padding: 16px;
+    }
+
+    .question-count {
+        display: none;
+    }
+
+    .admin-question-card {
+        flex-direction: column;
+    }
+
+    .admin-question-card-actions {
+        width: 100%;
+    }
+
+    .admin-question-card-actions button {
+        flex: 1;
+    }
+
+    .question-options {
+        grid-template-columns: 1fr;
+    }
+
+    .question-dates {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+}
+
+/* =========================================================
+   ADMIN CATEGORIES
+========================================================= */
+
+.admin-categories-page {
+    min-height: 100vh;
+    background: #f4f6f8;
+}
+
+.admin-categories-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+
+/* =========================================================
+   CATEGORY HEADING
+========================================================= */
+
+.admin-categories-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.admin-categories-heading h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.admin-categories-heading p {
+    color: #666;
+}
+
+.admin-category-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-category-actions button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.admin-category-actions .back-button {
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.create-category-button {
+    background: #222;
+    color: white;
+}
+
+
+/* =========================================================
+   CATEGORY FORM
+========================================================= */
+
+.category-form-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.category-form-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.category-form-header button {
+    border: none;
+
+    background: transparent;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CATEGORY LIST
+========================================================= */
+
+.admin-category-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.admin-category-card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.admin-category-info {
+    flex: 1;
+}
+
+.admin-category-info h3 {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+}
+
+.admin-category-info p {
+    color: #666;
+
+    margin-bottom: 12px;
+
+    font-size: 14px;
+}
+
+.admin-category-card-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+.admin-category-card-actions button {
+    padding: 9px 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #eee;
+
+    cursor: pointer;
+}
+
+.admin-category-card-actions .delete-button {
+    background: #222;
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVE - ADMIN CATEGORIES
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .admin-categories-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .admin-category-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .admin-category-card-actions {
+        width: 100%;
+    }
+
+    .admin-category-card-actions button {
+        flex: 1;
     }
 }
