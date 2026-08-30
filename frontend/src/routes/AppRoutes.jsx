@@ -2,11 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Login from "../pages/Login";
 import UserDashboard from "../pages/UserDashboard";
+import AdminDashboard from "../pages/AdminDashboard";
 import ProtectedRoute from "../components/ProtectedRoute";
 import QuizList from "../pages/QuizList";
 import TakeQuiz from "../pages/TakeQuiz";
 import QuizResult from "../pages/QuizResult";
 import MyAttempts from "../pages/MyAttempts";
+import AdminUsers from "../pages/AdminUser";
+import AdminQuizzes from "../pages/AdminQuizzes";
 
 function AppRoutes() {
 
@@ -29,6 +32,21 @@ function AppRoutes() {
                     <Route
                         path="/dashboard"
                         element={<UserDashboard />}
+                    />
+
+                    <Route
+                        path="/admin/dashboard"
+                        element={<AdminDashboard />}
+                    />
+
+                    <Route
+                        path="/admin/users"
+                        element={<AdminUsers />}
+                    />
+
+                    <Route
+                        path="/admin/quizzes"
+                        element={<AdminQuizzes />}
                     />
 
                     <Route
