@@ -123,30 +123,75 @@ function TakeQuiz() {
 
 
     if (loading) {
-
         return (
-            <div className="dashboard-message">
-                Loading quiz...
+            <div className="take-quiz-page">
+
+                <Navbar />
+
+                <main className="take-quiz-content">
+
+                    <div className="dashboard-message">
+                        Loading quiz...
+                    </div>
+
+                </main>
+
             </div>
         );
     }
 
 
     if (error) {
-
         return (
-            <div className="dashboard-message error-message">
-                {error}
+            <div className="take-quiz-page">
+
+                <Navbar />
+
+                <main className="take-quiz-content">
+
+                    <div className="dashboard-message error-message">
+                        {error}
+                    </div>
+
+                </main>
+
             </div>
         );
     }
 
 
     if (questions.length === 0) {
-
         return (
-            <div className="dashboard-message">
-                No questions available for this quiz.
+            <div className="take-quiz-page">
+
+                <Navbar />
+
+                <main className="take-quiz-content">
+
+                    <div className="no-questions-container">
+
+                        <div className="no-questions-card">
+
+                            <h2>
+                                No Questions Available
+                            </h2>
+
+                            <p>
+                                This quiz does not have any questions yet.
+                            </p>
+
+                            <button
+                                onClick={() => navigate("/quizzes")}
+                            >
+                                ← Back to Quizzes
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </main>
+
             </div>
         );
     }

@@ -13,6 +13,7 @@ import AdminQuizzes from "../pages/AdminQuizzes";
 import AdminQuestions from "../pages/AdminQuestions";
 import AdminRoute from "./AdminRoute";
 import AdminCategories from "../pages/AdminCategories";
+import QuizDetails from "../pages/QuizDetails";
 
 function AppRoutes() {
 
@@ -43,7 +44,12 @@ function AppRoutes() {
                     />
 
                     <Route
-                        path="/quiz/:quizId"
+                        path="/quiz/:id"
+                        element={<QuizDetails />}
+                    />
+
+                    <Route
+                        path="/quiz/:quizId/attempt"
                         element={<TakeQuiz />}
                     />
 

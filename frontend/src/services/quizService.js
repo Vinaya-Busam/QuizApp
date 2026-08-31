@@ -5,6 +5,12 @@ export const getAllQuizzes = async () => {
 
     return response.data;
 };
+
+export const getQuizById = async (id) => {
+    const response = await api.get(`/api/getQuiz/${id}`);
+    return response.data;
+};
+
 export const createQuiz = async (quizData) => {
     const response = await api.post("/api/quiz/create", quizData);
     return response.data;

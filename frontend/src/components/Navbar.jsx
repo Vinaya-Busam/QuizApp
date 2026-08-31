@@ -73,7 +73,7 @@ function Navbar() {
                                 navigate("/dashboard")
                             }
                         >
-                            Dashboard
+                            <h3>Dashboard</h3>
                         </button>
 
                         <button
@@ -81,7 +81,7 @@ function Navbar() {
                                 navigate("/quizzes")
                             }
                         >
-                            Quizzes
+                            <h3>Quizzes</h3>
                         </button>
 
                         <button
@@ -89,7 +89,7 @@ function Navbar() {
                                 navigate("/attempts")
                             }
                         >
-                            My Attempts
+                            <h3>My Attempts</h3>
                         </button>
                     </>
                 )}

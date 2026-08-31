@@ -7,7 +7,7 @@ function QuestionCard({
     return (
         <div className="question-card">
 
-            <div className="question-number">
+            <div className="take-question-number">
                 Question {question.questionOrder}
             </div>
 
