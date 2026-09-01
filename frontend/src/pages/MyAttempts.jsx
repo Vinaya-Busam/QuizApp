@@ -173,7 +173,7 @@ function MyAttempts() {
                                 <div className="attempt-percentage">
 
                                     <strong>
-                                        {attempt.percentage}%
+                                        {Number(attempt.percentage).toFixed(2).replace(/\.?0+$/, "")}%
                                     </strong>
 
                                 </div>

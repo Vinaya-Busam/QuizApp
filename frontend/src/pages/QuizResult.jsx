@@ -51,7 +51,7 @@ function QuizResult() {
                     <div className="score-circle">
 
                         <span>
-                            {result.percentage}%
+                            {Number(result.percentage).toFixed(2).replace(/\.?0+$/, "")}%
                         </span>
 
                     </div>

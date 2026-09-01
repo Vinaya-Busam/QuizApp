@@ -666,6 +666,48 @@ body {
     background: #222 !important;
 }
 
+/* Timer Styles */
+
+.quiz-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.quiz-timer {
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 600px) {
+
+    .quiz-top {
+        align-items: flex-start;
+    }
+
+    .quiz-timer {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+
+}
+
+.timer-warning {
+    font-weight: 700;
+}
+
+/* Timer Styles done */
+
+
 .no-questions-container {
     display: flex;
     justify-content: center;
