@@ -1,0 +1,324 @@
+.landing-page {
+    min-height: 100vh;
+    background: #f7f8fa;
+    color: #222;
+}
+
+.landing-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.landing-header {
+    height: 72px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.landing-logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.landing-logo span {
+    font-weight: 400;
+}
+
+.landing-login-button {
+    padding: 10px 22px;
+    border: 1px solid #222;
+    border-radius: 8px;
+    background: white;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.landing-login-button:hover {
+    background: #222;
+    color: white;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.landing-main {
+    flex: 1;
+    width: 100%;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.landing-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 80px 25px 60px;
+    text-align: center;
+}
+
+.landing-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    background: #eeeeee;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.landing-content h1 {
+    margin: 0;
+    font-size: 52px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.landing-content h1 span {
+    color: #666;
+}
+
+.landing-content > p {
+    max-width: 620px;
+    margin: 25px auto;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HERO BUTTONS
+   ========================= */
+
+.landing-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary-landing-button,
+.secondary-landing-button {
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.primary-landing-button {
+    border: 1px solid #222;
+    background: #222;
+    color: white;
+}
+
+.primary-landing-button:hover {
+    opacity: 0.85;
+}
+
+.secondary-landing-button {
+    border: 1px solid #ddd;
+    background: white;
+    color: #222;
+}
+
+.secondary-landing-button:hover {
+    background: #f0f0f0;
+}
+
+
+/* =========================
+   ROLE SECTION
+   ========================= */
+
+.role-section {
+    max-width: 900px;
+    margin: 20px auto 70px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.role-section h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.role-subtitle {
+    margin: 8px 0 30px;
+    color: #777;
+}
+
+
+/* =========================
+   ROLE CARDS
+   ========================= */
+
+.role-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.role-card {
+    padding: 35px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.role-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f1f1;
+    border-radius: 50%;
+    font-size: 27px;
+}
+
+.role-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.role-card p {
+    min-height: 50px;
+    margin: 0 auto 25px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.role-card > button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.role-card > button:hover {
+    opacity: 0.85;
+}
+
+
+
+.register-link {
+    padding: 0;
+    border: none;
+    background: none;
+    color: #222;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.admin-note {
+    display: block;
+    margin-top: 15px;
+    color: #999;
+    font-size: 13px;
+    font-style: italic;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.landing-footer {
+    padding: 25px;
+    text-align: center;
+    background: white;
+    border-top: 1px solid #e8e8e8;
+}
+
+.landing-footer p {
+    margin: 0;
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .landing-header {
+        padding: 0 20px;
+    }
+
+    .landing-content {
+        padding-top: 55px;
+    }
+
+    .landing-content h1 {
+        font-size: 38px;
+    }
+
+    .landing-content > p {
+        font-size: 15px;
+    }
+
+    .landing-actions {
+        flex-direction: column;
+        max-width: 300px;
+        margin: 30px auto 0;
+    }
+
+    .role-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .role-section h2 {
+        font-size: 24px;
+    }
+}
+
+.role-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+    color: #777;
+    font-size: 13px;
+}
+

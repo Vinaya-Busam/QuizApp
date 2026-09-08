@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { loginUser } from "../services/authService";
 import { useAuth } from "../context/authContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function Login() {
 
     const navigate = useNavigate();
+
+    const [searchParams] = useSearchParams();
+
+    const selectedRole = searchParams.get("role");
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -29,6 +34,7 @@ function Login() {
 
             console.log("Login successful:", data);
 
+            // Always use the role returned by backend
             if (data.role === "ADMIN") {
                 navigate("/admin/dashboard");
             } else {
@@ -57,8 +63,11 @@ function Login() {
 
                 <h1>Quiz App</h1>
 
+
                 <p className="login-subtitle">
-                    Test your knowledge. Challenge yourself.
+                    {selectedRole === "admin"
+                        ? "Sign in to access the administration panel."
+                        : "Sign in to continue taking quizzes."}
                 </p>
 
                 <form onSubmit={handleSubmit}>
@@ -79,12 +88,15 @@ function Login() {
                             placeholder="Enter your email"
                             required
                         />
+
                     </div>
 
                     <div className="form-group">
+
                         <label htmlFor="password">
                             Password
                         </label>
+
                         <input
                             id="password"
                             type="password"
@@ -95,6 +107,7 @@ function Login() {
                             placeholder="Enter your password"
                             required
                         />
+
                     </div>
 
                     {error && (
@@ -111,6 +124,16 @@ function Login() {
                     </button>
 
                 </form>
+
+                <div className="register-footer">
+                </div>
+
+                <button
+                    className="back-to-home"
+                    onClick={() => navigate("/")}
+                >
+                    ← Back to Home
+                </button>
 
             </div>
 

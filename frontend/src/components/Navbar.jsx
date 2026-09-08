@@ -17,7 +17,9 @@ function Navbar() {
                     navigate(isAdmin ? "/admin/dashboard" : "/dashboard")
                 }
             >
-                🧠 Quiz App
+                <div className="landing-logo">
+                        Quiz<span>App</span>
+                    </div>
             </div>
 
 
@@ -105,7 +107,7 @@ function Navbar() {
 
                 <button
                     className="logout-button"
-                    onClick={logout}
+                    onClick={() => navigate("/")}
                 >
                     Logout
                 </button>

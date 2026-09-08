@@ -14,6 +14,8 @@ import AdminQuestions from "../pages/AdminQuestions";
 import AdminRoute from "./AdminRoute";
 import AdminCategories from "../pages/AdminCategories";
 import QuizDetails from "../pages/QuizDetails";
+import LandingPage from "../pages/LandingPage";
+import Register from "../pages/Register";
 
 function AppRoutes() {
 
@@ -22,7 +24,10 @@ function AppRoutes() {
 
             <Routes>
 
+                <Route path="/" element={<LandingPage />} />
                 {/* Public routes */}
+
+                <Route path="/register" element={<Register />} />
 
                 <Route
                     path="/login"

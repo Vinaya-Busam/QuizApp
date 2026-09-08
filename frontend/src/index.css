@@ -15,6 +15,26 @@ body {
 
 
 /* =========================================================
+   LANDING PAGE
+========================================================= */
+.register-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 18px;
+    color: #777;
+    font-size: 13px;
+}
+
+.success-message {
+    margin: 10px 0;
+    color: #2e7d32;
+    font-size: 14px;
+}
+
+
+/* =========================================================
    LOGIN PAGE
 ========================================================= */
 
@@ -1044,7 +1064,7 @@ body {
 
     border-radius: 7px;
 
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .navbar-links button:hover {
@@ -1060,7 +1080,7 @@ body {
 }
 
 .navbar-user span {
-    font-size: 14px;
+    font-size: 15px;
 
     font-weight: 500;
 }
