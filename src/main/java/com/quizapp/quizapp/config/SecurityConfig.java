@@ -42,8 +42,11 @@ public class SecurityConfig {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOriginPatterns(
-                List.of("https://*.app.github.dev")
+        configuration.setAllowedOrigins(
+                List.of(
+                        "https://quiz-8q68to7e5-vinaya-busams-projects.vercel.app",
+                        "https://quiz-1tgnruqm1-vinaya-busams-projects.vercel.app"
+                )
         );
 
         configuration.setAllowedMethods(
